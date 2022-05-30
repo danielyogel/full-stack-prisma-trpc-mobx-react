@@ -1,5 +1,5 @@
 {
-  "name": "full-stack-starter",
+  "name": "full-stack-prisma-trpc-mobx-react",
   "workspaces": [
     "client",
     "server"
@@ -17,5 +17,6 @@
     "npm": "8.1.2"
   },
   "author": "Daniel Yogel",
-  "private": false
+  "private": false,
+  "license": "MIT"
 }
