@@ -1,0 +1,19 @@
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  install-lint-test-build-node:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
+    steps:
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@v1
+      - run: npm ci --no-audit
+      # - run: yarn run lint
+      - run: npm test
+      - run: npm run build
+        env:
+          CI: true
