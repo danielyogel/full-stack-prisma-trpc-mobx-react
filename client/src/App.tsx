@@ -21,6 +21,15 @@ api.query('getPeople').then((p) => {
 export function Main() {
   return (
     <div>
+      <div
+        className='p-2 bg-primary rounded'
+        onClick={async () => {
+          const res = await api.mutation('create');
+          ppl.set(res.map((p) => p.name));
+        }}
+      >
+        Create Person
+      </div>
       <Observer>
         {() => {
           return (

@@ -12,8 +12,14 @@ export const router = trpc
 
   .query('getPeople', {
     async resolve() {
-      await prisma.person.create({ data: { name: Math.random().toString().slice(0, 6) } });
+      await prisma.person.deleteMany();
 
+      return prisma.person.findMany();
+    }
+  })
+  .mutation('create', {
+    resolve: async function () {
+      await prisma.person.create({ data: { name: Math.random().toString().slice(0, 6) } });
       return prisma.person.findMany();
     }
   });
