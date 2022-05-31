@@ -58,7 +58,8 @@
     "push-prisma": "npx prisma db push",
     "pull-prisma": "npx prisma db pull",
     "studio-prisma": "npx prisma studio",
-    "install-production": "npm ci"
+    "install-production": "npm ci",
+    "install-dev": "npm install && npm run generate-prisma"
   },
   "author": "Daniel Yogel",
   "license": "MIT"
