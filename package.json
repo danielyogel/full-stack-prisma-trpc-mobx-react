@@ -2,6 +2,7 @@
   "name": "full-stack-prisma-trpc-mobx-react",
   "workspaces": [
     "client",
+    "client_vue",
     "server"
   ],
   "scripts": {
@@ -18,5 +19,12 @@
   "version": "0.1",
   "author": "Daniel Yogel",
   "private": false,
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@vue/cli": "^5.0.8",
+    "@vue/cli-plugin-vuex": "~5.0.0"
+  },
+  "dependencies": {
+    "element-plus": "^2.2.16"
+  }
 }

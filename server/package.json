@@ -45,7 +45,7 @@
     "typescript": "4.7.4"
   },
   "scripts": {
-    "dev": "nodemon -e ts -w ./src -x NODE_ENV=development ts-node --pretty ./src/server.ts",
+    "dev": "SET NODE_ENV=development&& nodemon -e ts -w ./src -x ts-node --pretty ./src/server.ts",
     "start": "NODE_ENV=development ts-node --pretty ./src/server.ts",
     "clean": "rimraf coverage build tmp",
     "build": "tsc -p tsconfig.release.json",
@@ -57,6 +57,7 @@
     "format-prisma": "npx prisma format",
     "push-prisma": "npx prisma db push",
     "pull-prisma": "npx prisma db pull",
+    "init-prisma": "npx prisma migrate dev --name init",
     "studio-prisma": "npx prisma studio",
     "install-production": "npm ci",
     "install-dev": "npm install && npm run generate-prisma"

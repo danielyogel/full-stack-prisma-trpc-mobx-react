@@ -1,4 +1,3 @@
-import path from 'path';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 
@@ -21,10 +20,10 @@ const serverContext = { app, env, prisma };
 
 trpcRoutes(serverContext);
 
-app.use(express.static(path.resolve(__dirname, '../../../client/dist')));
+app.use(express.static('dist'));
 
 app.get('*', (_, res) => {
-  res.sendFile('client/dist/index.html', { root: '../' });
+  res.sendFile('dist/index.html', { root: '../' });
 });
 
 app.listen(SERVER_PORT, () => {
