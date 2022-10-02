@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 
@@ -20,12 +21,8 @@ const serverContext = { app, env, prisma };
 
 trpcRoutes(serverContext);
 
-app.use(express.static('dist'));
+app.use(express.static(path.resolve(__dirname, '../../client/dist')));
 
-app.get('*', (_, res) => {
-  res.sendFile('dist/index.html', { root: '../' });
-});
+// app.get('*', (_, res) => res.sendFile('index.html', { root: '../client/dist' }));
 
-app.listen(SERVER_PORT, () => {
-  console.log(`server started at port ${SERVER_PORT}`);
-});
+app.listen(SERVER_PORT, () => console.log(`server started at port ${SERVER_PORT}`));

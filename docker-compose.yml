@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:13.7-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    # volumes:
+    #   - ./Postgres:/docker-entrypoint-initdb.d:rw
+# Useful scripts
+# docker run postgres:13.7-alpine tail -f /dev/null
+# docker run -it postgres:13.7-alpine bash

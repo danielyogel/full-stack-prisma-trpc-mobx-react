@@ -1,4 +1,4 @@
-import { DeepReplace } from './DeepReplaceType';
+import type { DeepReplace } from './DeepReplaceType';
 import { includes } from '../utils/functional';
 
 function replace<O extends {}>(object: O) {

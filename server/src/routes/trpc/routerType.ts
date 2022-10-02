@@ -1,3 +1,3 @@
-import { router } from './router';
+import type { router } from './router';
 
 export type AppRouter = typeof router;

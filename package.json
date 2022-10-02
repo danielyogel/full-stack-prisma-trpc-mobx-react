@@ -1,24 +1,21 @@
 {
-  "name": "full-stack-prisma-trpc-mobx-react",
-  "workspaces": [
-    "client",
-    "client_vue",
-    "server"
-  ],
+  "name": "full-stack-prisma-trpc-vue-element-plus",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "npm run dev --workspace=server & npm run dev --workspace=client",
-    "install-all": "npm run install-dev --workspace=server && cd client && npm install",
-    "install-production": "npm ci --workspace=client && cd server && npm run install-production && npm run generate-prisma",
-    "build-production": "npm run build --workspace=client && npm run build --workspace=server",
-    "run-production": "cd server && NODE_ENV=production node build/src/server.js"
+    "_____DEVELOPMENT_____": "",
+    "dev-client": "npm --prefix client run dev",
+    "dev-server": "npm --prefix server run dev",
+    "init": "",
+    "_____DOCKER_____": "",
+    "docker-build": "sh docker.build.sh",
+    "docker-run-locally": "docker run -p 8080:8080 --env-file .env %npm_package_name%:%npm_package_version%",
+    "docker-run-analyze": "docker run -it %npm_package_name%:%npm_package_version% /bin/sh"
   },
   "volta": {
     "node": "16.13.1",
     "npm": "8.1.2"
   },
-  "version": "0.1",
-  "author": "Daniel Yogel",
-  "private": false,
+  "author": "Yaniv Peretz",
   "license": "MIT",
   "devDependencies": {
     "@vue/cli": "^5.0.8",

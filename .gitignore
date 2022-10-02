@@ -24,6 +24,7 @@ server/build/
 
 # Optional npm cache directory
 .npm
+.npmrc
 
 # Optional eslint cache
 .eslintcache
@@ -31,9 +32,7 @@ server/build/
 # Misc
 .DS_Store
 
-.env
-
-server/.env
+.env.prod
 
 
 google-cloud-service-account.json

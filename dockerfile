@@ -1,26 +1,20 @@
-FROM node:14.17
+FROM node:16.17-alpine
 
-
-RUN apt-get update
-RUN npm install -g npm@7.20.1
-
-
-
-# Create an app directory in the docker
 WORKDIR /app
 
-# Copy local code to the container image.  TODO: Should be after install in the future - for faster docker builds
-COPY . ./
+# Copy order set to optimaze build time
+COPY server/node_modules server/node_modules
+COPY server/dist server/dist
+COPY server/prisma server/prisma
+COPY client/dist client/dist
+# Since the image tag is queried from the package.json.version, the file is copyied last
+COPY package*.json .
 
-# Copy the package.json and package-lock.json. 
-# COPY package*.json ./
+WORKDIR /app/server
+RUN npx prisma generate
 
-# Install production dependencies.
-RUN npm run install-production
-RUN npm run build-production
-
+WORKDIR /app
 EXPOSE 8080
 
-
 # Run the server
-CMD npm run run-production
+CMD node server/dist/server.js

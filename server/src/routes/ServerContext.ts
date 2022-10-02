@@ -1,6 +1,6 @@
-import { Express } from 'express';
-import { PrismaInstance } from '../dbClient';
-import { getEnv } from '../envSchema';
+import type { Express } from 'express';
+import type { PrismaInstance } from '../dbClient';
+import type { getEnv } from '../envSchema';
 
 export type ServerContext = {
   app: Express;
