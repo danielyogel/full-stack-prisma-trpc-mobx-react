@@ -9,8 +9,8 @@ services:
       POSTGRES_PASSWORD: postgres
     ports:
       - 5432:5432
-    # volumes:
-    #   - ./Postgres:/docker-entrypoint-initdb.d:rw
+    volumes:
+      - ./_utils/postgres:/docker-entrypoint-initdb.d:ro
 # Useful scripts
 # docker run postgres:13.7-alpine tail -f /dev/null
 # docker run -it postgres:13.7-alpine bash

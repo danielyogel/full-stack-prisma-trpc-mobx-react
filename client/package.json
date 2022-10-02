@@ -1,6 +1,7 @@
 {
-  "name": "client",
+  "name": "full-stack-client",
   "version": "0.0.0",
+  "author": "Yaniv Peretz",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",

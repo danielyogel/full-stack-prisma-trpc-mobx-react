@@ -1,12 +1,29 @@
-# Full Stack Prisma tRPC MobX React
+# Full Stack Project Template
 
-1. **requried environment variable**: "DATABASE_URL" - PostgreSQL connection string.  
-   using a direct environment variable, or an `.env` file inside the "server" dir.
-2. run `npm run install-all`
-3. run `npm run dev`
+##Stack
 
-## Notes
+- **Server**: Node, Express, Prisma, Postgres
+- **Client**: Vue, Pinia, Element-plus
+- **Test**: Jest, Playwright
+- **Tools**: Typescript. Docker, Prettier
 
-1. If Postgres DB is down, See: https://stackoverflow.com/questions/42653690/psql-could-not-connect-to-server-no-such-file-or-directory-5432-error/50882756
-2. Example of an `.env` file: DATABASE_URL="postgresql://daniel:daniel@localhost:5432/postgres?schema=full-stack-starter"
-3. install volta - `curl https://get.volta.sh | bash` (volta is similar to docker -locks node & npm versions)
+## Init
+
+Run once to set up the development environment.
+
+1. `npm run compose` to start a postgres docker (with template database)
+2. `npm run init` to install client & server dependencies + generate Prisma files.
+
+## Development
+
+1. `npm run dev-client` hot reload dev server (vite).
+1. `npm run dev-server` hot reload dev server (nodemon).
+
+## Build
+
+Use `npm run docker-build` to build a docker image, the build tag is based on `package.json version` key. You can run the docker image locally by `npm run docker-run-locally`;
+
+## Test
+
+1. `test-api` Test server apis (Jest).
+1. `test-api` E2E tests (Playwright).

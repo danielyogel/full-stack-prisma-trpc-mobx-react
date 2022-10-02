@@ -1,0 +1,13 @@
+{
+  "semi": true,
+  "trailingComma": "none",
+  "printWidth": 200,
+  "overrides": [
+    {
+      "files": ["client/src/**/*.ts", "server/src/**/*.ts"],
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
+}
