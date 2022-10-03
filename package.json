@@ -26,9 +26,6 @@
     "start": "node server/dist/server.js",
     "build": "npm run build --workspaces"
   },
-  "dependencies": {
-    "tslib": "2.4.0"
-  },
   "devDependencies": {
     "prettier": "2.7.1",
     "typescript": "^4.8.4"
