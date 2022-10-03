@@ -1,1 +1,1 @@
-export * from './trpcClient';
+export * from "./trpcClient";

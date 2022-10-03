@@ -10,6 +10,7 @@
     "postinstall": "npx prisma generate",
     "typecheck": "tsc --noEmit",
     "_____TEST____": "",
+    "lint": "npx eslint src",
     "_____PRISMA____": "",
     "generate-prisma": "npx prisma generate",
     "format-prisma": "npx prisma format",

@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    // default rule is OFF, so that special @typescript-eslint/return-await can be used: we allow return without await, but we disallow return without await from within try-catch (default behavior of @typescript-eslint/return-await rule)
+    // see details here: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/return-await.md
+    "no-return-await": "off",
+    "@typescript-eslint/return-await": "error",
+
+    // this make sure there's at least one empty line between functions
+    "padding-line-between-statements": ["warn", { "blankLine": "always", "prev": ["block", "block-like"], "next": ["function"] }]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "excludedFiles": ["*.js", "node_modules/", "typings/*", "*.d.ts"]
+    }
+  ],
+  "parserOptions": {
+    "project": "./server/tsconfig.json"
+  }
+}

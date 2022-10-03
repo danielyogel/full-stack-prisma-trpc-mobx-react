@@ -10,6 +10,8 @@
   ],
   "main": "server/dist/server.js",
   "scripts": {
+    "start": "node server/dist/server.js",
+    "build": "npm run build --workspaces",
     "_____DEVELOPMENT_____": "",
     "dev-client": "npm --prefix client run dev",
     "dev-server": "npm --prefix server run dev",
@@ -20,14 +22,15 @@
     "docker-run-locally": "docker run -p 8080:8080 --env-file .env %npm_package_name%:%npm_package_version%",
     "docker-run-analyze": "docker run -it %npm_package_name%:%npm_package_version% /bin/sh",
     "_____TEST_____": "",
+    "lint": "npm run lint --workspaces",
     "test-api": "",
-    "test-e2e": "",
-    "_____OTHERS_____": "",
-    "start": "node server/dist/server.js",
-    "build": "npm run build --workspaces"
+    "test-e2e": ""
   },
   "devDependencies": {
     "prettier": "2.7.1",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0"
   }
 }
