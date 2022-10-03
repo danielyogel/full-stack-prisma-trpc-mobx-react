@@ -6,7 +6,8 @@ WORKDIR /app
 # server/node_modules/@trpc/server is copied seprately due to tslib issue(?)
 # Since the image tag is queried from the package.json.version, the file is copyied last
 COPY node_modules node_modules
-COPY server/node_modules/@trpc/server server/node_modules/@trpc/server
+COPY server/node_modules/@trpc server/node_modules/@trpc
+COPY client/node_modules/@trpc client/node_modules/@trpc
 COPY server/prisma server/prisma
 
 # Building Prisma (should move to post install)
