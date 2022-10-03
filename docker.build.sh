@@ -1,15 +1,11 @@
 #! /bin/sh
 
 echo "Installing node_modules";
-npm --prefix client ci;
-npm --prefix server ci;
+npm run init;
 
-echo "building client dist";
-npm --prefix client run build;
-
-echo "building server dist";
-npm --prefix server run build;
-npm --prefix server prune --production;
+echo "building client & server dist";
+npm run build;
+npm prune --production;
 
 # Fetch image name
 NAME=$(node -e "console.log((require('./package.json')).name)");
@@ -21,5 +17,7 @@ echo "building $FULLNAME image";
 docker build . -t=$FULLNAME;
 
 # Reinstalling server devDependencies
-npm --prefix server i -D;
-npx --prefix server prisma generate;
+npm i -D --workspaces;
+cd server;
+npx prisma generate;
+cd ..;

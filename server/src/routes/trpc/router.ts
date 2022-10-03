@@ -1,21 +1,21 @@
-import * as trpc from '@trpc/server';
-import * as trpcExpress from '@trpc/server/adapters/express';
-import type { inferAsyncReturnType } from '@trpc/server';
-import { prisma } from '../../dbClient';
-import superjson from 'superjson';
-import { createTrpcContext } from './createTrpcContext';
-import type { ServerContext } from '../ServerContext';
+import * as trpc from "@trpc/server";
+import * as trpcExpress from "@trpc/server/adapters/express";
+import type { inferAsyncReturnType } from "@trpc/server";
+import { prisma } from "../../dbClient";
+import superjson from "superjson";
+import { createTrpcContext } from "./createTrpcContext";
+import type { ServerContext } from "../ServerContext";
 
 export const router = trpc
   .router<TrpcContext>()
   .transformer(superjson)
 
-  .query('getPeople', {
+  .query("getPeople", {
     async resolve() {
       return prisma.person.findMany();
     }
   })
-  .mutation('create', {
+  .mutation("create", {
     resolve: async function () {
       return prisma.person.create({ data: { name: Math.random().toString().slice(0, 6) } });
     }
@@ -26,7 +26,7 @@ export type TrpcContext = inferAsyncReturnType<ReturnType<typeof createTrpcConte
 export function trpcRoutes(serverContext: ServerContext) {
   const createContext = createTrpcContext(serverContext);
   serverContext.app.use(
-    '/trpc',
+    "/trpc",
     trpcExpress.createExpressMiddleware({
       router,
       createContext: createContext,

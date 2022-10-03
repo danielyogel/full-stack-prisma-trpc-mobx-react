@@ -1,9 +1,3 @@
-.npm
-.npmrc
-*/.npm
-*/.npmrc
-*/build
-server/.env
 google-cloud-service-account.json
 
 

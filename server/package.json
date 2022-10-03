@@ -4,14 +4,12 @@
   "main": "dist/server.js",
   "scripts": {
     "_____DEV____": "",
-    "dev": "SET NODE_ENV=development&& nodemon -e ts -w ./src -x ts-node --pretty ./src/server.ts",
+    "dev": "SET NODE_ENV=development&& npx nodemon -e ts -w ./src -x ts-node --pretty ./src/server.ts",
     "_____BUILD____": "",
     "build": "npx tsc",
     "postinstall": "npx prisma generate",
     "typecheck": "tsc --noEmit",
     "_____TEST____": "",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch",
     "_____PRISMA____": "",
     "generate-prisma": "npx prisma generate",
     "format-prisma": "npx prisma format",
@@ -37,7 +35,6 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/cookie-parser": "^1.4.3",
     "@types/express": "^4.17.13",
-    "@types/jest": "28.1.4",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/lodash": "^4.14.182",
     "@types/multer": "^1.4.7",
@@ -45,13 +42,9 @@
     "@types/pluralize": "^0.0.29",
     "@types/qs": "6.9.7",
     "full-stack-prisma-trpc-vue-element-plus": "file:..",
-    "jest": "28.1.2",
     "nodemon": "2.0.19",
-    "prettier": "2.7.1",
-    "ts-jest": "28.0.5",
     "ts-node": "10.8.2",
-    "tsutils": "3.21",
-    "typescript": "4.7.4"
+    "tsutils": "3.21"
   },
   "author": "Yaniv Peretz",
   "license": "MIT"

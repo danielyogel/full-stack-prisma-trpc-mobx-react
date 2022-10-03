@@ -4,7 +4,7 @@
   "printWidth": 200,
   "overrides": [
     {
-      "files": ["client/src/**/*.ts", "server/src/**/*.ts"],
+      "files": ["client/src/**/*.ts", "client/src/*.ts", "server/src/**/*.ts", "server/src/*.ts"],
       "options": {
         "parser": "typescript"
       }
