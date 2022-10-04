@@ -17,7 +17,12 @@ export const router = trpc
   })
   .mutation("create", {
     resolve: async function () {
-      return prisma.person.create({ data: { name: Math.random().toString().slice(0, 6) } });
+      return prisma.person.create({ data: { name: btoa(Math.random().toString()).substring(10, 15) } });
+    }
+  })
+  .mutation("deleteAll", {
+    resolve: async () => {
+      return prisma.person.deleteMany();
     }
   });
 
