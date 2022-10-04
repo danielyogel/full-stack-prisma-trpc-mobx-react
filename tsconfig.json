@@ -17,8 +17,6 @@
     "lib": ["ES2022"],
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "dist"
-  },
-  "include": ["src/**/*"]
+    "forceConsistentCasingInFileNames": true
+  }
 }

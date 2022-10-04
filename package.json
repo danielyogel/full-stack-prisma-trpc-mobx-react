@@ -24,13 +24,17 @@
     "_____TEST_____": "",
     "lint": "npm run lint --workspaces",
     "test": "npm run test --workspaces",
-    "test-e2e": ""
+    "test-e2e-run": "npx playwright test --headed",
+    "test-e2e-create": "npx playwright codegen http://localhost:8080/"
   },
   "devDependencies": {
-    "prettier": "2.7.1",
-    "typescript": "^4.8.4",
+    "@playwright/test": "^1.26.1",
+    "@types/node": "^18.8.2",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
-    "eslint": "^8.18.0"
+    "eslint": "^8.18.0",
+    "playwright": "^1.26.1",
+    "prettier": "2.7.1",
+    "typescript": "^4.8.4"
   }
 }
