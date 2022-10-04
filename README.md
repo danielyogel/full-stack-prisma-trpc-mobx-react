@@ -21,8 +21,8 @@ Run once to set up the development environment.
 
 ## Build
 
-`npm run docker-build` builds the docker image with both server & client. The build is tagged based on `package.json` name + version keys.
-`npm run docker-run-locally` runs the docker image locally.
+1. `npm run docker-build` builds the docker image with both server & client. The build is tagged based on `package.json` name + version keys.
+1. `npm run docker-run-locally` runs the docker image locally.
 
 ## Test
 
