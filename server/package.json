@@ -8,7 +8,7 @@
     "_____BUILD____": "",
     "build": "npx tsc",
     "postinstall": "npx prisma generate",
-    "typecheck": "tsc --noEmit",
+    "type-check": "tsc --noEmit",
     "_____TEST____": "",
     "lint": "npx eslint src",
     "test": "npx jest",

@@ -21,9 +21,14 @@ Run once to set up the development environment.
 
 ## Build
 
-Use `npm run docker-build` to build a docker image, the build tag is based on `package.json` name + version keys. You can run the docker image locally by `npm run docker-run-locally`;
+`npm run docker-build` builds the docker image with both server & client. The build is tagged based on `package.json` name + version keys.
+`npm run docker-run-locally` runs the docker image locally.
 
 ## Test
 
-1. `test-api` Test server apis (Jest).
-1. `test-api` E2E tests (Playwright).
+1. `npm run type-check` type check (compiles) both server & client.
+1. `npm run lint` lint (eslint) both server & client.
+1. `npm run test` Runs Jest tests for both server & client.
+1. `npm run test-e2e` Run Playwright E2E tests (prerequisite: `npm run docker-run-locally`).
+
+**Hint**: `npm run test-e2e:create` creates a new E2E test (prerequisite: `npm run docker-run-locally`).

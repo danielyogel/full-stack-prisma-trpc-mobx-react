@@ -22,10 +22,11 @@
     "docker-run-locally": "docker run -p 8080:8080 --env-file .env.docker %npm_package_name%:%npm_package_version%",
     "docker-run-analyze": "docker run -it %npm_package_name%:%npm_package_version% /bin/sh",
     "_____TEST_____": "",
+    "type-check": "npm run type-check --workspaces",
     "lint": "npm run lint --workspaces",
     "test": "npm run test --workspaces",
-    "test-e2e-run": "npx playwright test --headed",
-    "test-e2e-create": "npx playwright codegen http://localhost:8080/"
+    "test-e2e": "npx playwright test --headed",
+    "test-e2e:create": "npx playwright codegen http://localhost:8080/"
   },
   "devDependencies": {
     "@playwright/test": "^1.26.1",
