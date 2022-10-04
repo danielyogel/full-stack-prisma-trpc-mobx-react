@@ -1,6 +1,6 @@
 # Full Stack Project Template
 
-##Stack
+## Stack
 
 - **Server**: Node, Express, Prisma, Postgres
 - **Client**: Vue, Pinia, Element-plus
