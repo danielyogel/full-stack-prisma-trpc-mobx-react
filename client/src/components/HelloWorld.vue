@@ -1,16 +1,19 @@
 <script setup lang="ts">
 defineProps<{
-  msg: string
-}>()
+  msg: string;
+}>();
 </script>
 
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
+      <span>You’ve successfully created a project with: </span>
+      <span><a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> + </span>
+      <span><a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a> + </span>
+      <span><a href="https://prisma.io/" target="_blank" rel="noopener">Prisma</a> + </span>
+      <span><a href="https://trpc.io/" target="_blank" rel="noopener">Trpc</a>. </span>
+      <span>What's next?</span>
     </h3>
   </div>
 </template>

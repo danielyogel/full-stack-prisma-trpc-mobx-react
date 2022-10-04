@@ -27,7 +27,7 @@ async function deleteAllPersons() {
       <el-button type="success" @click="addPerson">Add Person</el-button>
       <el-button type="danger" @click="deleteAllPersons">Delete All Persons</el-button>
     </div>
-    <el-card class="card">{{ persons.length }}</el-card>
+    <el-card class="card">Persons: {{ persons.length }}</el-card>
     <el-card v-for="p in persons" :key="p.id" class="box-card card">
       <div>
         <span>name: {{ p.name }}</span>
