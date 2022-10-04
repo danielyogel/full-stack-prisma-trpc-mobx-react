@@ -5,7 +5,7 @@
 - **Server**: Node, Express, Prisma, Postgres
 - **Client**: Vue, Pinia, Element-plus
 - **Test**: Jest, Playwright
-- **Tools**: Typescript. Docker, Prettier
+- **Tools**: Typescript, Prettier, Eslint, Docker.
 
 ## Init
 
