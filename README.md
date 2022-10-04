@@ -21,7 +21,7 @@ Run once to set up the development environment.
 
 ## Build
 
-Use `npm run docker-build` to build a docker image, the build tag is based on `package.json version` key. You can run the docker image locally by `npm run docker-run-locally`;
+Use `npm run docker-build` to build a docker image, the build tag is based on `package.json` name + version keys. You can run the docker image locally by `npm run docker-run-locally`;
 
 ## Test
 

@@ -19,11 +19,11 @@
     "init": "npm ci --workspaces",
     "_____DOCKER_____": "",
     "docker-build": "sh docker.build.sh",
-    "docker-run-locally": "docker run -p 8080:8080 --env-file .env %npm_package_name%:%npm_package_version%",
+    "docker-run-locally": "docker run -p 8080:8080 --env-file .env.docker %npm_package_name%:%npm_package_version%",
     "docker-run-analyze": "docker run -it %npm_package_name%:%npm_package_version% /bin/sh",
     "_____TEST_____": "",
     "lint": "npm run lint --workspaces",
-    "test-api": "",
+    "test": "npm run test --workspaces",
     "test-e2e": ""
   },
   "devDependencies": {
