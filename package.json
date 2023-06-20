@@ -11,10 +11,6 @@
     "build-production": "npm run build --workspace=client && npm run build --workspace=server",
     "run-production": "cd server && NODE_ENV=production node build/src/server.js"
   },
-  "volta": {
-    "node": "16.13.1",
-    "npm": "8.1.2"
-  },
   "version": "0.1",
   "author": "Daniel Yogel",
   "private": false,
