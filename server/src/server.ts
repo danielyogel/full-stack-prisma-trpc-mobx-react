@@ -21,7 +21,7 @@ const serverContext = { app, env, prisma };
 
 trpcRoutes(serverContext);
 
-app.use(express.static(path.resolve(__dirname, '../../../client/dist')));
+app.use(express.static(path.resolve(__dirname, '../../client/dist')));
 
 app.get('*', (_, res) => {
   res.sendFile('client/dist/index.html', { root: '../' });

@@ -1,0 +1,14 @@
+# fly.toml app configuration file generated for full-stack-starter on 2023-06-20T16:16:06+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "full-stack-starter"
+primary_region = "cdg"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
