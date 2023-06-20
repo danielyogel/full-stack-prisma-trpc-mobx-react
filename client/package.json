@@ -4,13 +4,13 @@
   "scripts": {
     "dev": "concurrently  --group  --raw \"vite\" \"tsc --noEmit --watch\" \"npm run test\"",
     "tsc": "tsc --noEmit --watch",
-    "build": "tsc && vite build",
-    "serve": "vite preview",
+    "build": "vite build",
+    "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "ladle": "npx ladle serve",
-    "ladle:build": "npx ladle build --out dist-ladle",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "ladle": "concurrently  --group  --raw \"tsc --noEmit --watch\" \"ladle serve\"",
+    "ladle:build": "ladle build --out dist-ladle",
+    "test": "vitest --config ./vitest.config.ts",
+    "coverage": "vitest run --coverage --config ./vitest.config.ts"
   },
   "dependencies": {
     "@daniely/routerx": "^0.2.1",

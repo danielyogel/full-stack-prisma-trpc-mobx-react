@@ -1,22 +1,10 @@
-/// <reference types="vitest" />
-
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 
 export default defineConfig({
   plugins: [react()],
-  test: { globals: true, includeSource: ['src/**/*.{ts,tsx}'] },
   define: {
     'import.meta.vitest': 'undefined'
   },
-  server: {
-    port: 3001,
-    proxy: {
-      '/trpc': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        secure: false
-      }
-    }
-  }
+  server: { port: 3002, host: '0.0.0.0' }
 });

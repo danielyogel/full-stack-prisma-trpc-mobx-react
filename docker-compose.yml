@@ -1,0 +1,78 @@
+#
+# === DOCKER-COMPOSE IS FOR DEVELOPMENT ONLY ===
+# DATABASE_URL note -  https://stackoverflow.com/questions/68476229/m1-related-prisma-cant-reach-database-server-at-database5432
+# important about volumes 1 - https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder/37898591#37898591
+# important about volumes 2 - https://medium.com/@kartikio/setup-node-ts-local-development-environment-with-docker-and-hot-reloading-922db9016119
+# Limitations - only /src directories are mounted from host, mounting all code and excluding node_module does NOT work as described here: https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
+
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    hostname: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=quests_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - quests_db:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    depends_on:
+      - postgres
+    ports:
+      - "5555:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.admin
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - quests_pgadmin_data:/var/lib/pgadmin
+    restart: unless-stopped
+
+  minio:
+    container_name: Minio
+    command: server /data --console-address ":9090"
+    environment:
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=adminadmin
+    image: quay.io/minio/minio:latest
+    ports:
+      - "9000:9000"
+      - "9090:9090"
+    volumes:
+      - ~/minio/data:/data
+    restart: unless-stopped
+
+  quests:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    restart: always
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://admin:admin@postgres:5432/quests_db?connect_timeout=3000
+      STORAGE_ENDPOINT: minio
+      STORAGE_PORT: 9000
+      STORAGE_ACCESSKEY: pJ0ZQvAWeUdXKdpN
+      STORAGE_SECRETKEY: QUOk3I8zSdZaExNJlFT8eejwoVq2AIwL
+      STORAGE_BUCKET: quests-bucket-dev
+    volumes:
+      - ./server/src/:/app/server/src/
+      - ./server/prisma/:/app/server/prisma/
+      - ./client/src/:/app/client/src/
+    depends_on:
+      - postgres
+      - minio
+    ports:
+      - "3002:3002"
+
+volumes:
+  quests_db:
+  quests_pgadmin_data:
