@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for my-starter on 2023-06-21T15:25:10+03:00
+# fly.toml app configuration file generated for my-starter-one on 2023-06-21T16:05:45+03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "my-starter"
-primary_region = "cdg"
+app = "my-starter-one"
+primary_region = "bos"
 
 [deploy]
   release_command = "npm run release-command"
