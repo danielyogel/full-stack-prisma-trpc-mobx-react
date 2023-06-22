@@ -6,5 +6,15 @@ export default defineConfig({
   define: {
     'import.meta.vitest': 'undefined'
   },
-  server: { port: 3002, host: '0.0.0.0' }
+  server: {
+    port: 3002,
+    host: '0.0.0.0',
+    proxy: {
+      '/trpc': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        secure: false
+      }
+    }
+  }
 });
