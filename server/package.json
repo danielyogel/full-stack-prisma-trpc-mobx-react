@@ -52,7 +52,7 @@
     "start": "NODE_ENV=development ts-node --pretty ./src/server.ts",
     "clean": "rimraf coverage build tmp",
     "build": "swc src -C module.type=commonjs -d build",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit --showconfig",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "deploy-migrations": "npx prisma migrate deploy"

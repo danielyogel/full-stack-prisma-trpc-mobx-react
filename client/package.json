@@ -6,7 +6,7 @@
     "tsc": "tsc --noEmit --watch",
     "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit --showconfig",
+    "typecheck": "tsc --noEmit",
     "ladle": "concurrently  --group  --raw \"tsc --noEmit --watch\" \"ladle serve\"",
     "ladle:build": "ladle build --out dist-ladle",
     "test": "vitest --config ./vitest.config.ts",
