@@ -2,7 +2,7 @@
   "name": "full-stack-server",
   "version": "0.0.1",
   "engines": {
-    "node": ">= 16 <17"
+    "node": ">= 16 <20"
   },
   "dependencies": {
     "@prisma/client": "^4.16.1",
