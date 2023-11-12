@@ -1,13 +1,15 @@
-# fly.toml app configuration file generated for my-starter-one on 2023-06-21T16:05:45+03:00
+# fly.toml app configuration file generated for full-stack-starter on 2023-11-12T20:03:44+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "my-starter-one"
-primary_region = "bos"
+app = "full-stack-starter"
+primary_region = "cdg"
 
 [deploy]
   release_command = "npm run release-command"
+
+[build]
 
 [http_service]
   internal_port = 8080
@@ -15,3 +17,4 @@ primary_region = "bos"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
+  processes = ["app"]
