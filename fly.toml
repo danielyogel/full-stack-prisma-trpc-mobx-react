@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for full-stack-boilerplate on 2023-11-12T22:46:12+02:00
+# fly.toml app configuration file generated for full-stack-boilerplate on 2023-11-13T18:20:18+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -6,10 +6,10 @@
 app = "full-stack-boilerplate"
 primary_region = "cdg"
 
+[build]
+
 [deploy]
   release_command = "npm run release-command"
-
-[build]
 
 [http_service]
   internal_port = 8080
