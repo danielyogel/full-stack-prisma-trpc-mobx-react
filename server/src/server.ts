@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 
 import { prisma } from './dbClient';
 import { getEnv } from './envSchema';
-import { trpcRoutes } from './routes/trpc/router';
+import { trpcRoutes } from './api';
 
 const env = getEnv();
 
